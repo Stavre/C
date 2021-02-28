@@ -1,7 +1,8 @@
+//implementations of abs function using bitwise operations and if conditional statement
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-int abs_bit(int n)
+int abs_bit(int n)  //bitwise implementation
 {
     int a = n >> 31;
     n = n^a;
@@ -9,26 +10,34 @@ int abs_bit(int n)
     return n;
 }
 
-int abs_if(int a)
+int abs_if(int a)  //if implementation
 {
     if (a < 0)
         return -a;
     return a;
 }
-int main()
+int main()  //comparison bbetween the two implementation and C's abs function
 {
-    clock_t start, stop;
-    long double elapsed, ab, abs_b, abs_i;
-    int num = 0;
+    clock_t start, stop;  //start and stop
+    long double elapsed, ab, abs_b, abs_i; 
+    //elapsed = function running time
+    // ab = abs total running time
+    // abs_b = abs_bit total running time
+    // abs_i = abs_if total running time
+    int num = 0; // stores random number
     int a, b, c, errors;
+    //a = abs(num);
+    //b = abs_bit(num);
+    //c = abs_if(num);
+    //errors = number of errors;
     ab = 0;
     abs_b = 0;
     abs_i = 0;
-    int iter = 10;
+    int iter = 10; //number of iterations
     for (int i = 0; i < iter ; i++)
     {
-        srand(time(0)); 
-        num = (rand() % (1000 - (-1000) + 1)) + (-1000);
+        srand(time(0));  // seed
+        num = (rand() % (1000 - (-1000) + 1)) + (-1000); //generate random number between -1000 and 1000
 
 
         start = clock();
