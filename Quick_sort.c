@@ -24,7 +24,6 @@ int partition(char *A, int begin, int end)
         if(i >= j)
             return j;
         swapp(&A[i], &A[j]);
-        //printf("%s\n", A);
     }
 }
 
