@@ -1,1 +1,1 @@
-A few algorithms and projects.
+A few algorithms and tiny projects.
